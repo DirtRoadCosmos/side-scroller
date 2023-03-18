@@ -1,16 +1,20 @@
-let layer1, layer2, layer3, layer4, layer5;
+let layer1, layer2, layer3, layer4, layer5, layer6, layer7;
 let gameObjects;
 let gameSpeed;
 let objectResizeFactor;
 let cnv;
 let p, s, i;
 
+
 function preload() {
-  layer1 = loadImage("layer-1.png");
-  layer2 = loadImage("layer-2.png");
-  layer3 = loadImage("layer-3.png");
-  layer4 = loadImage("layer-4.png");
-  layer5 = loadImage("layer-5.png");
+  // assets from https://free-game-assets.itch.io/free-horizontal-game-backgrounds
+  layer1 = loadImage("dark/sky.png");
+  layer2 = loadImage("dark/clouds_1.png");
+  layer3 = loadImage("dark/rocks.png");
+  layer4 = loadImage("dark/ground_1.png");
+  layer5 = loadImage("dark/clouds_2.png");
+  layer6 = loadImage("dark/ground_2.png");
+  layer7 = loadImage("dark/ground_3.png");
 }
 
 function setup() {
@@ -20,11 +24,13 @@ function setup() {
   gameSpeed = 3;
   objectResizeFactor = height / layer1.height;
   gameObjects = [
-    new Layer(layer1, 0.2),
-    new Layer(layer2, 0.4),
-    new Layer(layer3, 0.6),
-    new Layer(layer4, 0.8),
-    new Layer(layer5, 1)
+    new Layer(layer1, 0.05),
+    new Layer(layer2, 0.10),
+    new Layer(layer3, 0.20),
+    new Layer(layer4, 0.35),
+    new Layer(layer5, 0.55),
+    new Layer(layer6, 0.80),
+    new Layer(layer7, 1)
   ];
   createSpeedUI();
 }
@@ -46,8 +52,9 @@ function createSpeedUI() {
   i = createInput();
   i.id("slider");
   i.attribute("type", "range");
-  i.attribute("min", 0);
-  i.attribute("max", 20);
+  i.attribute("min", -9);
+  i.attribute("max", 9);
+  i.attribute("step", 0.3)
   i.value(gameSpeed);
   i.changed(userChangedSpeed);
   i.parent("container");
