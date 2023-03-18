@@ -80,6 +80,7 @@ class Layer {
   update() {
     this.x -= gameSpeed * this.speedModifier;
     if (this.x < -this.width) this.x = 0;
+    if (this.x > 0) this.x = -this.width;
   }
 
   show() {
