@@ -20,4 +20,5 @@
 
 ## animate 100 shapes
 - start @ 1:36:10 => [link](https://youtu.be/GFO_txvwK_c?t=96m10s)
-- end @ 1:39:49 => [link](https://youtu.be/GFO_txvwK_c?t=99m49s)
+- end @ 1:40:50 => [link](https://youtu.be/GFO_txvwK_c?t=100m50s)
+
